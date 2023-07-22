@@ -1,3 +1,9 @@
+CL-1.0.5: Updating Dashboard component.
+- Added conversation page UI.
+- Installed shadcn form for handling form input via commands
+  - *npx shadcn-ui@latest add form* for form handling
+  - *npx shadcn-ui@latest add input* for input handling
+
 CL-1.0.4: Updating Dashboard component.
 - Fixed hydration error in mobilesidebar component.
 - Used active selected css effect on sidebar option using ternary operator.
