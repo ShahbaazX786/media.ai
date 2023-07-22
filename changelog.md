@@ -1,3 +1,9 @@
+CL-1.0.3: Completing Sidebar for both mobile and desktop.
+- Added a new mobilesidebar component.
+- Added sheet for mobilesidebar using command npx shadcn-ui@latest add sheet
+ - This shall render the same sidebar component that we created for desktop dashboard page but upon button click and only in screens smaller than md.
+ - we use sheet for rendering the component, sheettrigger for enabling the button, and sheetcontent to render whatever component we want to display in there. 
+
 CL-1.0.2: Added Clerk Authentication & Sidebar,Navbar component.
 - using command *npm install @clerk/nextjs*
 - then create .env file and add publish/secret api keys in that.
@@ -9,6 +15,8 @@ CL-1.0.2: Added Clerk Authentication & Sidebar,Navbar component.
   - And as clerk is an 3rd party solution. so it may add some parameters to our routes.
     - ex:localhost/signup can be modified to localhost/signup/%abc/%defghi/etc/redirect=etc
     - so to enable this dynamic route params we shall provide "[[...signup]]" as the folder name which holds signup page.
+  - Update .env file with post-authentication actions/routing.
+  - Also embed a userButton for account management and logout purposes.
 - Also installed shadcn buttons using npm.
 - Added sidebar,navbar.
 - Modified layout.tsx for dashboard, landing for centering the elements.
