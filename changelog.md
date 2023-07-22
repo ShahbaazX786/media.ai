@@ -1,3 +1,18 @@
+CL-1.0.2: Added Clerk Authentication & Sidebar,Navbar component.
+- using command *npm install @clerk/nextjs*
+- then create .env file and add publish/secret api keys in that.
+- then wrap our app using clerkprovider in app/layout.tsx file.
+- then secure the routes using middleware.ts file in root/middleware.ts
+- then create your own sign-up and sign-in pages in your routes.
+  - I have used page grouping feature of nextjs where (authentication)/signup/page.tsx ==> can be accessible using route localhost:3000/signup.
+  - basically we can group two or more routes/pages using this grouping feature.
+  - And as clerk is an 3rd party solution. so it may add some parameters to our routes.
+    - ex:localhost/signup can be modified to localhost/signup/%abc/%defghi/etc/redirect=etc
+    - so to enable this dynamic route params we shall provide "[[...signup]]" as the folder name which holds signup page.
+- Also installed shadcn buttons using npm.
+- Added sidebar,navbar.
+- Modified layout.tsx for dashboard, landing for centering the elements.
+
 CL-1.0.1: Added shadcn ui
 - using command npx shadcn-ui@latest init.
     - typescript - y
