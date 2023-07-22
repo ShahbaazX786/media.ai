@@ -1,6 +1,12 @@
+CL-1.0.4: Updating Dashboard component.
+- Fixed hydration error in mobilesidebar component.
+- Used active selected css effect on sidebar option using ternary operator.
+- Installed new shadcn card using command *npx shadcn-ui@latest add card*
+- Added Dashboard page with fixed array of options.
+
 CL-1.0.3: Completing Sidebar for both mobile and desktop.
 - Added a new mobilesidebar component.
-- Added sheet for mobilesidebar using command npx shadcn-ui@latest add sheet
+- Added sheet for mobilesidebar using command *npx shadcn-ui@latest add sheet*
  - This shall render the same sidebar component that we created for desktop dashboard page but upon button click and only in screens smaller than md.
  - we use sheet for rendering the component, sheettrigger for enabling the button, and sheetcontent to render whatever component we want to display in there. 
 
