@@ -1,3 +1,7 @@
+CL-1.0.9: Added Music generation component with backend api as well.
+- Added replicate token in env file.
+- Copied and Updated the conversation dashboard & api folder to music folder and updated the propmts here and there. 
+
 CL-1.0.8: Added Image generation component with backend api as well.
 - Copied the conversation folder and renamed it to image and made some changes here and there.
 - Updated api folder's route.ts file aswell for handling image prompt, amount and resolution.
