@@ -54,7 +54,7 @@ const ConversationPage = () => {
 
   return (
     <div>
-      <Heading title="conversation" description="Our most advanced conversation model" icon={MessagesSquare}  iconColor="text-violet-500" bgColor="text-violet-500/10" />
+      <Heading title="conversation" description="Our most advanced conversation model" icon={MessagesSquare}  iconColor="text-violet-500" bgColor="bg-violet-500/10" />
       <div className="px-4 lg:px-8">
         <div>
             <Form {...form}>

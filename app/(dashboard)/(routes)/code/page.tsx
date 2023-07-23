@@ -4,7 +4,7 @@ import axios from "axios";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Heading from "@/components/Heading";
-import { MessagesSquare } from "lucide-react";
+import { Code } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { formSchema } from "./constants";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
@@ -18,6 +18,7 @@ import Loader from "@/components/Loader";
 import { cn } from "@/lib/utils";
 import UserAvatar from "@/components/UserAvatar";
 import BotAvatar from "@/components/BotAvatar";
+import ReactMarkdown from "react-markdown";
 
 const CodePage = () => {
   const router = useRouter();
@@ -40,7 +41,7 @@ const CodePage = () => {
         };
         const newMessages = [...messages, userMessage];
 
-        const response = await axios.post('/api/conversation',{messages:newMessages});
+        const response = await axios.post('/api/code',{messages:newMessages});
         setMessages((current)=>[...current,userMessage,response.data]);
         form.reset();
     }
@@ -54,14 +55,14 @@ const CodePage = () => {
 
   return (
     <div>
-      <Heading title="conversation" description="Our most advanced conversation model" icon={MessagesSquare}  iconColor="text-violet-500" bgColor="text-violet-500/10" />
+      <Heading title="Code Generation" description="Generative code using descriptive prompts!." icon={Code}  iconColor="text-green-700" bgColor="bg-green-500/10" />
       <div className="px-4 lg:px-8">
         <div>
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="rounded-lg border w-full p-4 px-3 md:px-6 focus-within:shadow-sm grid grid-cols-12 gap-2">
                     <FormField name="prompt" render={({field})=>(<FormItem className="col-span-12 lg:col-span-10">
                         <FormControl className="m-0 p-0">
-                            <Input className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent" disabled={isLoading} placeholder="how to calculate BMI?" {...field} />
+                            <Input className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent" disabled={isLoading} placeholder="How to add validations to forms in react?" {...field} />
 
                         </FormControl>
                     </FormItem>)}></FormField>
@@ -77,16 +78,25 @@ const CodePage = () => {
           )}
             {messages.length === 0 && !isLoading && (
             <div>
-              <Empty label='No conversation started yet.' />
+              <Empty label='Lets get code assistance from Generative AI.' />
             </div>
             )}
             <div className="flex flex-col-reverse gap-y-4">
                 {messages.map((message)=>(
                    <div key={message.content} className={cn("p-8 w-full flex items-start gap-x-8 rounded-lg", message.role === "user" ? "bg-white border border-black/10":"bg-muted")}>
                       {message.role === "user" ? <UserAvatar /> : <BotAvatar />}
-                      <p className="text-sm">
-                        {message.content}
-                      </p>
+                      <ReactMarkdown components={
+                        {
+                          pre:({node, ...props})=>
+                          (<div className="overflow-auto w-full my-2 bg-black/10 p-2 rounded-lg">{<pre {...props} />}</div>
+                          ),
+                          code:({node, ...props})=>
+                          (<div className="bg-black/10 rounded-lg p-1" {...props}></div>)
+                      }}
+                      className="text-sm overflow-hidden leading-7"
+                      >
+                        {message.content || ""} 
+                      </ReactMarkdown>
                     </div>
                 ))}
             </div>

@@ -1,3 +1,10 @@
+CL-1.0.7: Added code generation component with backend api as well.
+- Copied the conversation folder and renamed it to code and made some changes here and there.
+- Updated code page to include some style modifications/api change.
+- installed *react-markdown* package to convert our response to markdown and view it in a better alignment.
+- Updated api route logic to include a boot instruction which will make it behave like a code generator
+- Fixed a small bgColor styling bug in respective pages of conversation and code generation. 
+
 CL-1.0.6: Added Conversation component with backend api as well.
 > Currently my 5$ credit is expired in openai so i can't use it no more to test conversation & code components.
 - Updated .env file with new api keys as they have been pushed to github.
@@ -8,8 +15,8 @@ CL-1.0.6: Added Conversation component with backend api as well.
 - Added an Empty component to display a empty background image with some text when no conversation has been started.
 - Added a standard empty chat png.
 - Added a loader component to display it whenever we make an api call.
-- Installed avatar image component from shadcn library.
-- Installed axios, openai libraries.
+- Installed *avatar* image component from *shadcn* library.
+- Installed *axios*, *openai* libraries.
 - Added api routes for making post request to conversation api.
 
 CL-1.0.5: Updating Dashboard component.
