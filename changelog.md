@@ -1,3 +1,17 @@
+CL-1.0.6: Added Conversation component with backend api as well.
+> Currently my 5$ credit is expired in openai so i can't use it no more to test conversation & code components.
+- Updated .env file with new api keys as they have been pushed to github.
+- Updated gitignore file to include .env file.
+- Updated file layouts in correct folder locations.
+- Added a userAvatar component to view user image if it exists or displays only firstname and lastname initials as avatar for request view.
+- Added a botAvatar component to show the bot logo for response view.
+- Added an Empty component to display a empty background image with some text when no conversation has been started.
+- Added a standard empty chat png.
+- Added a loader component to display it whenever we make an api call.
+- Installed avatar image component from shadcn library.
+- Installed axios, openai libraries.
+- Added api routes for making post request to conversation api.
+
 CL-1.0.5: Updating Dashboard component.
 - Added conversation page UI.
 - Installed shadcn form for handling form input via commands
