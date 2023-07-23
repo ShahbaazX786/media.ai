@@ -1,3 +1,10 @@
+CL-1.0.8: Added Image generation component with backend api as well.
+- Copied the conversation folder and renamed it to image and made some changes here and there.
+- Updated api folder's route.ts file aswell for handling image prompt, amount and resolution.
+- Updated parameters for image constants.
+- Installed *select component* from shadcn.
+- Updated next.config.js to avoid invalid src prop error for multiple images in our image component.
+
 CL-1.0.7: Added code generation component with backend api as well.
 - Copied the conversation folder and renamed it to code and made some changes here and there.
 - Updated code page to include some style modifications/api change.
