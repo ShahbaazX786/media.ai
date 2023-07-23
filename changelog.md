@@ -1,3 +1,6 @@
+CL-1.0.10: Added Video generation component with backend api as well.
+- Copied and Updated the conversation dashboard & api folder to video folder and updated the propmts here and there.
+
 CL-1.0.9: Added Music generation component with backend api as well.
 - Added replicate token in env file.
 - Copied and Updated the conversation dashboard & api folder to music folder and updated the propmts here and there. 
