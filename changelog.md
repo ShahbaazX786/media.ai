@@ -1,3 +1,21 @@
+CL-1.1.0: Setting up api limit using prisma.
+- installed prisma using command *npm i prisma -D* as developer dependency.
+- initialized prisma using command *npx prisma init*
+- Headover to planetscale.com and sign in, then click on create and create a free tier 5gb database.
+- after few minutes when the db is allocated, then click on connect to db --> click connection method as prisma from dropdown and then copy the dbstring and paste it into .env file.
+- Now click on schema.prisma and copy its contents and paste it into our local schema.prisma.
+- Then install a lib called prisma/client using command *npm i @prisma/client*
+- Added a usermodel in schema.prisma file to map data into our database.
+- Added a prismaclient initializer function in lib folder.
+- Now run command *npx prisma generate* to generate some code in node_modules for prisma types. 
+- Then finally run the command *npx prisma db push* to sync the local database with cloud db in planetscale.
+> Note: Every time you make a change in schema.prisma file you need to run generate and push commands.
+>Tip: To see your db run the command *npx prisma studio* which opens up a port on which you can go to via browser.
+- Created constants file in root to hold the max free trials.
+- Created util like middleware api-limit file for to check current userAPIlimit count and increaseApilimit Count value upon a sucessful api hit.
+- Updated these api-limit methods in all 5 api routes.
+
+
 CL-1.0.10.5: formatting.
 - Minor bug fixes and code formatting.
 
