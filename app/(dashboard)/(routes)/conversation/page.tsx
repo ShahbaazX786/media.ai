@@ -48,7 +48,7 @@ const ConversationPage = () => {
         console.log(error);
     }
     finally{
-        router.refresh(); //this will update all our server components
+        router.refresh(); //this will update all our server components with latest data from db.
     }
   }
 

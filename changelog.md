@@ -1,3 +1,11 @@
+CL-1.2.0: Adding UI for API limit and subscription dialog modal.
+- Added a FreeCounter component.
+- Added a new method in api-limit.ts file to fetch currentApiLimit count from db.
+- Used that freecounter component in sidebar to view the data.
+- Installed a new component from shadcn using command *npx shadcn-ui@latest add progress*.
+- updated primary color code in globals.css file.
+- Added a new variant in shadcn button component.
+
 CL-1.1.0: Setting up api limit using prisma.
 - installed prisma using command *npm i prisma -D* as developer dependency.
 - initialized prisma using command *npx prisma init*
