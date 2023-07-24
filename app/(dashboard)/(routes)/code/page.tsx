@@ -19,9 +19,11 @@ import { cn } from "@/lib/utils";
 import UserAvatar from "@/components/UserAvatar";
 import BotAvatar from "@/components/BotAvatar";
 import ReactMarkdown from "react-markdown";
+import { useProModal } from "@/hooks/api-pro-modal";
 
 const CodePage = () => {
   const router = useRouter();
+  const ProModal = useProModal();
   const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([]);
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -45,8 +47,12 @@ const CodePage = () => {
         setMessages((current)=>[...current,userMessage,response.data]);
         form.reset();
     }
-    catch(error:any){
+    catch (error: any) {
+      if (error?.response?.status === 403) {
+        ProModal.onOpen();
+      } else {
         console.log(error);
+      }
     }
     finally{
         router.refresh(); //this will update all our server components

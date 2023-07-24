@@ -14,9 +14,11 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Empty } from "@/components/Empty";
 import Loader from "@/components/Loader";
+import { useProModal } from "@/hooks/api-pro-modal";
 
 const VideoPage = () => {
   const router = useRouter();
+  const ProModal = useProModal();
   const [video, setVideo] = useState<string>();
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -36,7 +38,11 @@ const VideoPage = () => {
         form.reset();
     }
     catch(error:any){
+      if (error?.response?.status === 403) {
+        ProModal.onOpen();
+      } else {
         console.log(error);
+      }
     }
     finally{
         router.refresh(); //this will update all our server components

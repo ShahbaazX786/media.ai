@@ -13,13 +13,14 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { Empty } from "@/components/Empty";
 import Loader from "@/components/Loader";
-import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardFooter } from "@/components/ui/card";
 import Image from "next/image";
+import { useProModal } from "@/hooks/api-pro-modal";
 
 const ImagePage = () => {
+  const ProModal = useProModal();
   const router = useRouter();
   const [images, setImages] = useState<string[]>([]);
 
@@ -43,7 +44,11 @@ const ImagePage = () => {
       form.reset();
     }
     catch(error:any){
+      if (error?.response?.status === 403) {
+        ProModal.onOpen();
+      } else {
         console.log(error);
+      }
     }
     finally{
         router.refresh(); //this will update all our server components

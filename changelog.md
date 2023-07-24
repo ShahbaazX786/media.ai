@@ -1,3 +1,12 @@
+CL-1.2.5: Adding a dialog modal whenever we click the upgrade button in freecounter component.
+- installed a package called *zustand* using npm.
+- Added hooks folder in root and created a custom setter method in it.
+- Added a subscription dialog modal.
+- Updated its styles.
+- Added tools array to the modal.
+- Provided apichecklimit to both mobilesidebar and sidebar so that they appear and be consistent in both small and bigger screens.
+- Added proper error handling for 403 error in all 5 pages.
+
 CL-1.2.0: Adding UI for API limit and subscription dialog modal.
 - Added a FreeCounter component.
 - Added a new method in api-limit.ts file to fetch currentApiLimit count from db.

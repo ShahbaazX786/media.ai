@@ -18,9 +18,11 @@ import Loader from "@/components/Loader";
 import { cn } from "@/lib/utils";
 import UserAvatar from "@/components/UserAvatar";
 import BotAvatar from "@/components/BotAvatar";
+import { useProModal } from "@/hooks/api-pro-modal";
 
 const ConversationPage = () => {
   const router = useRouter();
+  const ProModal = useProModal();
   const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([]);
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -45,7 +47,11 @@ const ConversationPage = () => {
         form.reset();
     }
     catch(error:any){
+      if(error?.response?.status === 403){
+        ProModal.onOpen();
+      }else{
         console.log(error);
+      }
     }
     finally{
         router.refresh(); //this will update all our server components with latest data from db.
