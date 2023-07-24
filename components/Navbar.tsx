@@ -6,7 +6,7 @@ const Navbar = async() => {
   const apiLimitCount = await getApiLimitCount();
   return (
     <div className="flex items-center p-4">
-      <MobileSidebar apiLimitCount = {apiLimitCount}/> 
+      <MobileSidebar apiLimitCount = {apiLimitCount || 0}/> 
       <div className="flex w-full justify-end">
         <UserButton afterSignOutUrl="/" />
       </div>

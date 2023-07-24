@@ -1,3 +1,6 @@
+CL-1.2.5.5: Small type error fix in sidebar.tsx.
+
+
 CL-1.2.5: Adding a dialog modal whenever we click the upgrade button in freecounter component.
 - installed a package called *zustand* using npm.
 - Added hooks folder in root and created a custom setter method in it.

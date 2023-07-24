@@ -12,7 +12,7 @@ interface MobileSidebarProps{
     apiLimitCount:number;
 }
 
-const MobileSidebar = ({apiLimitCount=0}:MobileSidebarProps) => {
+const MobileSidebar = ({ apiLimitCount=0 }:MobileSidebarProps) => {
     // fixing hydration error
     const [isMounted, setIsMounted] = useState(false);
     
@@ -33,7 +33,7 @@ const MobileSidebar = ({apiLimitCount=0}:MobileSidebarProps) => {
                 </Button>
             </SheetTrigger>
             <SheetContent side='left' className='p-0'>
-                <Sidebar apiLimitCount={apiLimitCount} />
+              <Sidebar apiLimitCount={apiLimitCount} />
             </SheetContent>
         </Sheet>
   );
