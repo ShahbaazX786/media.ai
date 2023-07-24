@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 import {Configuration, OpenAIApi} from 'openai';
 
 const config = new Configuration({
-    apiKey:process.env.OPEN_API_KEY,
+    apiKey: process.env.OPEN_API_KEY,
 });
 
 const openAI = new OpenAIApi(config);
@@ -36,7 +36,7 @@ export async function POST(req:Request) {
 
     }
     catch(error){
-        console.log('Conversation_ERROR:', error);
+        console.log("CONVERSATION_ERROR:", error);
         return new NextResponse('Internal Server Error', {status:500});
     }
 }

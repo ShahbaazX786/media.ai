@@ -1,3 +1,6 @@
+CL-1.0.10.5: formatting.
+- Minor bug fixes and code formatting.
+
 CL-1.0.10: Added Video generation component with backend api as well.
 - Copied and Updated the conversation dashboard & api folder to video folder and updated the propmts here and there.
 
