@@ -1,5 +1,30 @@
-CL-1.2.5.5: Small type error fix in sidebar.tsx.
+CL-1.3.5: Settings Page
+- Added settings/page.tsx page.
+- Added a util function which shall return user subscription status.
+- Created a custom subscription button which shall fetch subscription status and change its appearnce upon the status.
+- Now after adding when I tried to test the button it gave me an error 'customer portal error' so go to the link in console log or go to customer portal page in stripe and enable testpoint/ add testpoint.
+- Used isPro as props to ensure we do not show the upgrade and trial dialogs in PRO/subscribed user.
+- Used isPro as another criteria in all 5 pages api routes. Also if the user is not pro then no need to run increaseAPIlimit function.
 
+CL-1.3.0: Stripe Integration [complete flow]
+- signed in stripe and copied secret key from there and pasted in .env file.
+- installed stripe using *npm i stripe* command.
+- Created stripe configuration file with 2 parameters.
+- Updated schema.prisma file with userSubscription modal and later generated new schema using *npx prisma generate* command and then pushed the schema changes to cloud db using *npx prisma db push* command.
+- Created a util function which returns absolute path.
+- Created stripe/route.ts file to handle stripe page.
+- Created a webhook/route.ts file to handle stripe events like checkout and cancel/updrage events.
+- Installed stripe cli from stripe developers-->webhook-->test an endpoint-->follow 3 steps there.
+- After downloading and extracting stripeCli.zip to stripeCli.exe copy its path and paste it into the system env variables in path field.
+- Then run the first step command in cmd *stripe login*
+  - Then login using your stripe account and allow access.
+- Then go to second step where you run the stripe hostlistener using command *stripe listen --forward-to localhost:3000/api/webhook*
+  - it will generate a webhook secret key upon running the above command.
+  - copy and paste it into env file.
+- Then finally run your app and test it up by checking if all events are 200 in your stripe listener cmd tab or not.
+- As stripe is an external lib so we need to add /api/webhooks in our middleware for public urls so that it can be accessed without any errors.
+
+CL-1.2.5.5: Small type error fix in sidebar.tsx.
 
 CL-1.2.5: Adding a dialog modal whenever we click the upgrade button in freecounter component.
 - installed a package called *zustand* using npm.
