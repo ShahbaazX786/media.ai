@@ -1,3 +1,10 @@
+CL-1.4.5: Customer Support integration with CRISP.
+- Created a crisp chat account with www.dummy.com as company name. And at last page copied the *Crisp_ID*
+- Installed sdk for crisp chat using the command *npm i crisp-sdk-web*
+- Added a crispchat.tsx component to configure the crisp using the env
+- Added a crispChatProvider.tsx component add it in our layout file.
+- Tried providing the id as env but it did not work quite, so just provided it as a string instead.
+
 CL-1.4.0: Error Handling and Toast Notification.
 - Installed a toast notification library using command *npm i react-hot-toast*
 - Added a new ToasterProvider component and added it in app/layout.ts

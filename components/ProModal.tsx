@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import axios from "axios";
 import { useState } from "react";
+import { toast } from "react-hot-toast";
 
 export const ProModal = () => {
 const ProModal = useProModal();
@@ -20,7 +21,7 @@ const [loading, setLoading] = useState(false);
       const response = await axios.get('/api/stripe');
       window.location.href = (response).data.url;
     } catch (error) {
-      console.log('stripe_client_error');
+      toast.error('Something Went Wrong');
     } finally{
       setLoading(false);
     }
