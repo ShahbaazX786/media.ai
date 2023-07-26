@@ -1,3 +1,8 @@
+CL-1.4.0: Error Handling and Toast Notification.
+- Installed a toast notification library using command *npm i react-hot-toast*
+- Added a new ToasterProvider component and added it in app/layout.ts
+- Updated the general console.log errors with toast.error.
+
 CL-1.3.5: Settings Page
 - Added settings/page.tsx page.
 - Added a util function which shall return user subscription status.

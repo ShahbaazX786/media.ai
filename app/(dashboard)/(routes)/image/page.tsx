@@ -18,6 +18,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardFooter } from "@/components/ui/card";
 import Image from "next/image";
 import { useProModal } from "@/hooks/api-pro-modal";
+import { toast } from "react-hot-toast";
 
 const ImagePage = () => {
   const ProModal = useProModal();
@@ -47,7 +48,7 @@ const ImagePage = () => {
       if (error?.response?.status === 403) {
         ProModal.onOpen();
       } else {
-        console.log(error);
+        toast.error('Something Went Wrong');
       }
     }
     finally{
