@@ -53,8 +53,11 @@ const ConversationPage = () => {
       }else if(error?.response?.status === 429){
         toast.error('Oops! your openAI free credits might have used up or expired...')
       }
+      else if(error?.response?.status === 500){
+        toast.error('Oops! Seems like my Open AI free credits expired!');
+      }
       else{
-        toast.error('Something Went Wrong');
+        toast.error('something went wrong');
       }
     }
     finally{
