@@ -1,3 +1,6 @@
+CL-1.5.1: postinstall script.
+- Forgot to add postinstall script.
+
 CL-1.5.0: Landing Page and Finishing touches.
 - Added Landing page layout.
   - And it shall have navbar, hero, content(testimonials), and footer.
