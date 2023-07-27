@@ -1,3 +1,6 @@
+CL-1.5.3: Bug fix.
+- Added some proper error handling when open ai credits expire.
+
 CL-1.5.2: Bug fix.
 - Bug fix:Missed a unknown type error in webhook/route.ts file.
 
