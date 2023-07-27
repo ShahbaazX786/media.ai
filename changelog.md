@@ -1,3 +1,6 @@
+CL-1.5.2: Bug fix.
+- Bug fix:Missed a unknown type error in webhook/route.ts file.
+
 CL-1.5.1: postinstall script.
 - Forgot to add postinstall script.
 
