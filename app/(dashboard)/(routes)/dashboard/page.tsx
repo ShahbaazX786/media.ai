@@ -48,10 +48,10 @@ export default function Home() {
 
     return (
         <div>
-            <h1>Bismillah</h1>
+            <h1 className="text-transparent absolute top-0">Bismillah</h1>
             <div className="mb-8 space-y-4">
-                <h2 className="text-2xl md:text-4xl font-bold text-center">Explore the power of AI</h2>
-                <p className="text-muted-foreground font-light text-sm md:text-lg text-center">Experience the real potential of Generative AI</p>
+                <h2 className="text-2xl md:text-4xl font-bold text-center">Explore the real power of Generative AI</h2>
+                <p className="text-muted-foreground font-light text-sm md:text-lg text-center">Provide prompts to generate media and assistance from AI</p>
             </div>
             <div className="px-4 md:px-20 lg:px-32 space-y-4">
                 {tools.map((tool)=>(

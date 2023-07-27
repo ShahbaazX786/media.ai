@@ -71,6 +71,7 @@ return (
               pro
             </Badge>
             </div>
+            <p className="text-zinc-700 font-light">Pro Plan grants access to all 5 tools</p>
           </DialogTitle>
           <DialogDescription className="text-center pt-2 space-y-2 text-zinc-900 font-medium">
             {tools.map((tool)=>(

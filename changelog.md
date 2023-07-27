@@ -1,3 +1,17 @@
+CL-1.5.0: Landing Page and Finishing touches.
+- Added Landing page layout.
+  - And it shall have navbar, hero, content(testimonials), and footer.
+- Installed a package using command *npm i typewriter-effect* to use the typewriter effect on hero component.
+- Fixed a bug where realtime count was not reflecting in sidebar.
+- Fixed a bug in api-limit where getapilimit was not returning anything.
+- Styling:
+  - Fixed invisible close button styling appearing in  mobile sidebar by fixing sheet.tsx
+  - Added some finishing touches in dashboard page.
+  - Added New media.ai logo.
+  - Added custom scrollbar styles in globals.css.
+  - Added some finishing touches like pravatar links in testimonials.
+  - Added Loading animation.
+
 CL-1.4.5: Customer Support integration with CRISP.
 - Created a crisp chat account with www.dummy.com as company name. And at last page copied the *Crisp_ID*
 - Installed sdk for crisp chat using the command *npm i crisp-sdk-web*

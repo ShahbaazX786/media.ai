@@ -84,7 +84,7 @@ const CodePage = () => {
             <div className="p-8 rounded-lg w-full flex items-center justify-center bg-muted"><Loader /></div>
           )}
             {messages.length === 0 && !isLoading && (
-            <div>
+            <div className="w-25">
               <Empty label='Lets get code assistance from Generative AI.' />
             </div>
             )}

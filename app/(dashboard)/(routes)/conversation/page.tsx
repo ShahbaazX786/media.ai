@@ -50,7 +50,10 @@ const ConversationPage = () => {
     catch(error:any){
       if(error?.response?.status === 403){
         ProModal.onOpen();
-      }else{
+      }else if(error?.response?.status === 429){
+        toast.error('Oops! your openAI free credits might have used up or expired...')
+      }
+      else{
         toast.error('Something Went Wrong');
       }
     }
